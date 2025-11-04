@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRT & MMXM Trading Eğitimi - Profesyonel Trader Programı</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 60px rgba(0,0,0,0.4);
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            color: white;
+            padding: 80px 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 3.2em;
+            margin-bottom: 25px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .header .subtitle {
+            font-size: 1.6em;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+        
+        .header .markets {
+            font-size: 1.4em;
+            color: #f39c12;
+            font-weight: 600;
+            margin-top: 25px;
+            letter-spacing: 2px;
+        }
+        
+        /* Navigation */
+        .nav-pills {
+            background: #ecf0f1;
+            padding: 25px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 18px;
+            border-bottom: 4px solid #2c3e50;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-pill {
+            background: white;
+            padding: 14px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid #34495e;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+            font-size: 1.05em;
+        }
+        
+        .nav-pill:hover {
+            background: #34495e;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+        }
+        
+        /* Sections */
+        .section {
+            padding: 80px 50px;
+        }
+        
+        .section:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .section-title {
+            font-size: 2.8em;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 5px;
+            background: linear-gradient(90deg, #2c3e50, #f39c12);
+            border-radius: 3px;
+        }
+        
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(243, 156, 18, 0.3);
+            font-size: 1.3em;
+            font-weight: 600;
+            line-height: 1.8;
+        }
+        
+        /* Concept Cards */
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+            margin: 50px 0;
+        }
+        
+        .concept-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-left: 6px solid #2c3e50;
+            transition: all 0.3s;
+        }
+        
+        .concept-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+        }
+        
+        .concept-card h3 {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+        
+        .concept-card .term {
+            background: #ecf0f1;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-size: 1.15em;
+            color: #34495e;
+            font-weight: 600;
+        }
+        
+        .concept-card p {
+            font-size: 1.15em;
+            line-height: 1.9;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        
+        .concept-card ul {
+            margin-top: 20px;
+            padding-left: 25px;
+        }
+        
+        .concept-card li {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 12px;
+            color: #555;
+        }
+        
+        /* Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+            margin: 50px 0;
+        }
+        
+        .info-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 3px solid #ecf0f1;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+            border-color: #34495e;
+        }
+        
+        .info-card .icon {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+        }
+        
+        .info-card .title {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 12px;
+        }
+        
+        .info-card .content {
+            font-size: 1.15em;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        /* Benefits */
+        .benefits-list {
+            display: grid;
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .benefit-item {
+            background: white;
+            padding: 30px;
+            border-left: 6px solid #27ae60;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        .benefit-item:hover {
+            transform: translateX(12px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        
+        .benefit-item .title {
+            font-weight: 700;
+            color: #27ae60;
+            font-size: 1.3em;
+            margin-bottom: 12px;
+        }
+        
+        .benefit-item p {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        /* Why Choose */
+        .why-choose {
+            background: linear-gradient(135deg, #16a085 0%, #27ae60 100%);
+            color: white;
+            padding: 60px 50px;
+            border-radius: 20px;
+            margin: 50px 0;
+            box-shadow: 0 15px 40px rgba(22, 160, 133, 0.3);
+        }
+        
+        .why-choose h3 {
+            font-size: 2.3em;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .why-choose ul {
+            list-style: none;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .why-choose li {
+            font-size: 1.25em;
+            padding: 18px 0;
+            padding-left: 45px;
+            position: relative;
+            line-height: 1.8;
+        }
+        
+        .why-choose li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #f39c12;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+        
+        /* Module Cards */
+        .modules-grid {
+            display: grid;
+            gap: 35px;
+            margin: 50px 0;
+        }
+        
+        .module-card {
+            background: white;
+            color: #2c3e50;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-left: 6px solid #34495e;
+        }
+        
+        .module-card h3 {
+            font-size: 1.9em;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #ecf0f1;
+            padding-bottom: 15px;
+            color: #2c3e50;
+            font-weight: 700;
+        }
+        
+        .module-card ul {
+            list-style: none;
+        }
+        
+        .module-card li {
+            padding: 14px 0;
+            padding-left: 35px;
+            position: relative;
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .module-card li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #f39c12;
+            font-weight: bold;
+            font-size: 1.4em;
+        }
+        
+        .module-card li strong {
+            color: #2c3e50;
+            font-weight: 700;
+        }
+        
+        /* Bonus Section */
+        .bonus-section {
+            background: linear-gradient(135deg, #8e44ad 0%, #c0392b 100%);
+            color: white;
+            padding: 60px 50px;
+            border-radius: 20px;
+            margin: 50px 0;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(142, 68, 173, 0.3);
+        }
+        
+        .bonus-section h2 {
+            font-size: 2.8em;
+            margin-bottom: 25px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            font-weight: 700;
+        }
+        
+        /* Bot Grid */
+        .bot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .bot-card {
+            background: rgba(255,255,255,0.98);
+            color: #2c3e50;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+        
+        .bot-card:hover {
+            transform: scale(1.06);
+        }
+        
+        .bot-card .bot-icon {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+        }
+        
+        .bot-card .bot-title {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #8e44ad;
+            margin-bottom: 15px;
+        }
+        
+        .bot-card p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        /* Fund Bonus */
+        .fund-bonus {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            color: white;
+            padding: 60px 50px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 50px 0;
+            box-shadow: 0 15px 40px rgba(243, 156, 18, 0.3);
+        }
+        
+        .fund-bonus .amount {
+            font-size: 5em;
+            font-weight: 800;
+            margin: 30px 0;
+            text-shadow: 4px 4px 8px rgba(0,0,0,0.3);
+        }
+        
+        /* Price Section */
+        .price-section {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 70px 50px;
+            text-align: center;
+            border-radius: 20px;
+            margin: 50px 0;
+            box-shadow: 0 15px 40px rgba(44, 62, 80, 0.3);
+        }
+        
+        .price-section .price {
+            font-size: 6em;
+            font-weight: 800;
+            margin: 40px 0;
+            text-shadow: 4px 4px 8px rgba(0,0,0,0.4);
+            color: #f39c12;
+        }
+        
+        .included-list {
+            text-align: left;
+            max-width: 850px;
+            margin: 40px auto;
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 15px;
+            list-style: none;
+        }
+        
+        .included-list li {
+            padding: 16px 0;
+            padding-left: 45px;
+            position: relative;
+            font-size: 1.2em;
+            line-height: 1.8;
+        }
+        
+        .included-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #f39c12;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+        
+        .included-list li.highlight {
+            font-size: 1.4em;
+            color: #f39c12;
+            font-weight: 700;
+        }
+        
+        /* Contact */
+        .contact-section {
+            background: #2c3e50;
+            color: white;
+            padding: 70px 50px;
+            text-align: center;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+            margin: 50px 0;
+        }
+        
+        .contact-card {
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 15px;
+            transition: all 0.3s;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+        
+        .contact-card:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-8px);
+            border-color: #f39c12;
+        }
+        
+        .contact-card .icon {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+        }
+        
+        .contact-card a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1a252f;
+            color: #95a5a6;
+            padding: 50px;
+            text-align: center;
+        }
+        
+        .footer .warning {
+            background: rgba(231, 76, 60, 0.1);
+            border-left: 5px solid #e74c3c;
+            padding: 30px;
+            margin: 30px auto;
+            max-width: 950px;
+            text-align: left;
+            border-radius: 8px;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+        
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+            color: white;
+            padding: 25px 60px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin: 35px 0;
+            transition: all 0.3s;
+            box-shadow: 0 8px 20px rgba(39, 174, 96, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .cta-button:hover {
+            background: linear-gradient(135deg, #229954 0%, #1e8449 100%);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(39, 174, 96, 0.5);
+        }
+        
+        .large-text {
+            font-size: 1.25em;
+            line-height: 1.9;
+            color: #555;
+        }
+        
+        .emphasis {
+            color: #2c3e50;
+            font-weight: 700;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2.2em; }
+            .section { padding: 50px 25px; }
+            .section-title { font-size: 2em; }
+            .nav-pills { flex-direction: column; }
+            .price-section .price { font-size: 4em; }
+            .concept-grid { grid-template-columns: 1fr; }
+            .fund-bonus .amount { font-size: 3.5em; }
+        }
+        
+        /* Scroll Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 35px;
+            right: 35px;
+            background: #2c3e50;
+            color: white;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6em;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.3s;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+        
+        .scroll-top.show { opacity: 1; }
+        .scroll-top:hover { background: #34495e; transform: translateY(-5px); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🎓 PROFESYONELLEŞTİREN EĞİTİM PROGRAMI</h1>
+            <div class="subtitle">CRT & MMXM Stratejisi | Sıfır İndikatör, Tam Kontrol</div>
+            <div class="markets">📊 Borsa İstanbul | Kripto | Forex 📈</div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav-pills">
+            <a href="#nedir" class="nav-pill">🎯 CRT/MMXM Nedir?</a>
+            <a href="#neden" class="nav-pill">💡 Neden Bu Eğitim?</a>
+            <a href="#ozellikler" class="nav-pill">⚙️ Özellikler</a>
+            <a href="#icerik" class="nav-pill">📖 İçerik</a>
+            <a href="#bonus" class="nav-pill">🎁 Bonuslar</a>
+            <a href="#ucret" class="nav-pill">💳 Ücret</a>
+            <a href="#iletisim" class="nav-pill">📞 İletişim</a>
+        </div>
+
+        <!-- CRT/MMXM Explanation -->
+        <div id="nedir" class="section">
+            <h2 class="section-title">🎯 CRT & MMXM Nedir?</h2>
+            
+            <div class="highlight-box">
+                Bu eğitimde öğreneceğiniz CRT ve MMXM, profesyonel yatırımcıların kullandığı, piyasanın gerçek yapısını anlamanızı sağlayan en gelişmiş analiz yöntemleridir. Geleneksel indikatörlerden tamamen farklı bir yaklaşımla, piyasa yapıcılarının hareketlerini anlayacak ve onlarla aynı yönde işlem yapacaksınız.
+            </div>
+
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>📊 CRT (Candle Range Theory)</h3>
+                    <div class="term">Mum Aralığı Teorisi</div>
+                    <p><strong>CRT, mumların oluşturduğu fiyat aralıklarını analiz ederek piyasanın yönünü belirleme sanatıdır.</strong> Hiçbir indikatör, osilatör veya karmaşık formül kullanmadan, sadece mumların açılış, kapanış, yüksek ve düşük noktalarına bakarak piyasanın ne yapacağını tahmin etmenizi sağlar.</p>
+                    
+                    <p><strong>CRT ile öğrenecekleriniz:</strong></p>
+                    <ul>
+                        <li><strong>Mum Yapısı Analizi:</strong> Mumların gövde ve fitil oranlarından piyasanın gücünü anlama</li>
+                        <li><strong>Range (Aralık) Belirleme:</strong> Mumların oluşturduğu yüksek ve düşük seviyeleri tespit etme</li>
+                        <li><strong>Kırılım Noktaları:</strong> Mumların önceki aralıkları kırdığı kritik seviyeleri yakalama</li>
+                        <li><strong>Momentum Ölçümü:</strong> Mum büyüklüklerinden piyasanın hızını ve yönünü belirleme</li>
+                        <li><strong>Dönüş Sinyalleri:</strong> Özel mum formasyonlarından trend değişimlerini önceden görme</li>
+                    </ul>
+
+                    <p style="margin-top: 20px;"><strong>Neden CRT?</strong> Çünkü her mum bir hikaye anlatır. CRT ile bu hikayeleri okuyup piyasanın bir sonraki hamlesini anlarsınız.</p>
+                </div>
+
+                <div class="concept-card">
+                    <h3>🏦 MMXM (Market Maker Execution Model)</h3>
+                    <div class="term">Piyasa Yapıcı Hareket Modeli</div>
+                    <p><strong>MMXM, piyasa yapıcılarının (bankalar, büyük fonlar, kurumsal yatırımcılar) nasıl hareket ettiğini ve nasıl kar elde ettiğini anlamanızı sağlayan bir modeldir.</strong></p>
+                    
+                    <p><strong>MMXM ile öğrenecekleriniz:</strong></p>
+                    <ul>
+                        <li><strong>Piyasa Manipülasyonu:</strong> Kurumların perakende yatırımcıları nasıl tuzağa düşürdüğünü anlama</li>
+                        <li><strong>Likidite Bölgeleri:</strong> Büyük emirlerin nerede bekletildiğini görme</li>
+                        <li><strong>Stop-Loss Avı:</strong> Kurumların stop-loss'ları nasıl topladığını öğrenme</li>
+                        <li><strong>Institutional Flow:</strong> Akıllı paranın akış yönünü takip etme</li>
+                        <li><strong>Premium ve Discount Zones:</strong> Fiyatın ucuz veya pahalı olduğu bölgeleri belirleme</li>
+                    </ul>
+
+                    <p style="margin-top: 20px;"><strong>Neden MMXM?</strong> Piyasayı hareket ettirenler kimse, onların stratejisini öğrenmelisiniz. MMXM ile küçük yatırımcıdan kurumsal yatırımcı zihniyetine geçersiniz.</p>
+                </div>
+            </div>
+
+            <div class="why-choose" style="margin-top: 60px;">
+                <h3>✨ Bu Eğitimi Seçmeniz Gereken 10 Neden</h3>
+                <ul>
+                    <li><strong>Sıfır İndikatör:</strong> Karmaşık göstergelerle uğraşmayın, sadece fiyata odaklanın</li>
+                    <li><strong>Profesyonel Seviye:</strong> Kurumsal yatırımcıların kullandığı stratejileri öğrenin</li>
+                    <li><strong>Birebir Eğitim:</strong> Kalabalık sınıflarda kaybolmayın, tamamen size özel eğitim</li>
+                    <li><strong>Her Piyasada Çalışır:</strong> BIST, Kripto, Forex - her yerde aynı strateji</li>
+                    <li><strong>Gerçek Piyasa Uygulaması:</strong> Teoride kalmayın, canlı piyasada pratik yapın</li>
+                    <li><strong>Algoritmik Bot Desteği:</strong> 1 yıl boyunca 5 farklı bot ile pasif gelir</li>
+                    <li><strong>5.000 USD Fon Hediyesi:</strong> Öğrendiklerinizi gerçek parayla uygulayın</li>
+                    <li><strong>Sürekli Destek:</strong> Eğitim sonrası 3 ay danışmanlık</li>
+                    <li><strong>Risk Yönetimi Odaklı:</strong> Kazanmayı değil, kaybetmemeyi öğrenin</li>
+                    <li><strong>Kanıtlanmış Yöntem:</strong> Dünya çapında binlerce trader'ın kullandığı sistem</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <div class="section" style="background: #f8f9fa;">
+            <h2 class="section-title">📚 Eğitim Programı Hakkında</h2>
+            <p class="large-text" style="text-align: center; max-width: 950px; margin: 30px auto;">
+                Piyasalarda başarılı olmak için karmaşık indikatörlere ihtiyacınız yok. Bu eğitim programı, size <span class="emphasis">CRT (Candle Range Theory - Mum Aralığı Teorisi)</span> ve <span class="emphasis">MMXM (Market Maker Execution Model)</span> konseptleri ile profesyonel seviyede işlem yapma becerisi kazandıracak.
+            </p>
+            <p class="large-text" style="text-align: center; max-width: 950px; margin: 30px auto;">
+                <strong>3 aylık yoğun eğitim sürecinde</strong>, piyasa yapısını okuma, Order Block'ları belirleme, FVG/IFVG analizi, BPR kullanımı ve risk yönetimi konularında derinlemesine bilgi sahibi olacaksınız.
+            </p>
+
+            <div class="highlight-box" style="margin-top: 50px;">
+                💎 Bu eğitim, sadece teknik bilgi değil, aynı zamanda profesyonel trader zihniyeti kazandırır. Duygusal kararlar yerine, planlı ve disiplinli işlem yapma becerisini öğrenirsiniz.
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div id="ozellikler" class="section">
+            <h2 class="section-title">⚙️ Eğitim Özellikleri</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="icon">⏱️</div>
+                    <div class="title">Eğitim Süresi</div>
+                    <div class="content">3 Ay (12 Hafta)<br>Toplam 48 Saat</div>
+                </div>
+                <div class="info-card">
+                    <div class="icon">📅</div>
+                    <div class="title">Haftalık Program</div>
+                    <div class="content">Haftada 2 Gün<br>Her Ders 2 Saat</div>
+                </div>
+                <div class="info-card">
+                    <div class="icon">👤</div>
+                    <div class="title">Eğitim Formatı</div>
+                    <div class="content">Birebir Özel Eğitim<br>Size Özel Program</div>
+                </div>
+                <div class="info-card">
+                    <div class="icon">📊</div>
+                    <div class="title">Piyasalar</div>
+                    <div class="content">BIST | Kripto | Forex<br>Tüm Piyasalar</div>
+                </div>
+                <div class="info-card">
+                    <div class="icon">🎯</div>
+                    <div class="title">Analiz Yöntemi</div>
+                    <div class="content">100% CRT/MMXM<br>Sıfır İndikatör</div>
+                </div>
+                <div class="info-card">
+                    <div class="icon">🚀</div>
+                    <div class="title">Hedef Kitle</div>
+                    <div class="content">Başlangıç - İleri<br>Her Seviye</div>
+                </div>
+            </div>
+
+            <div class="why-choose" style="margin-top: 60px;">
+                <h3>🎓 Neden Birebir Eğitim?</h3>
+                <ul>
+                    <li>Tamamen size özel tempo ve program</li>
+                    <li>Anlamadığınız noktalarda sınırsız soru sorma hakkı</li>
+                    <li>Kendi grafikleriniz üzerinde çalışma imkanı</li>
+                    <li>İhtiyacınıza göre özelleştirilebilir müfredat</li>
+                    <li>Kalabalık sınıflarda kaybolmadan, %100 verim</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Why This Program -->
+        <div id="neden" class="section" style="background: #f8f9fa;">
+            <h2 class="section-title">💡 Neden Bu Eğitim Programı?</h2>
+            
+            <div class="highlight-box">
+                🌟 Bu eğitim programı, geleneksel teknik analiz eğitimlerinden <strong>tamamen farklı</strong>. Piyasanın gerçek dilini öğretiyoruz!
+            </div>
+
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <div class="title">✓ İndikatör Karmaşasından Kurtulun</div>
+                    <p>RSI, MACD, Stochastic, Bollinger Bands... Hepsini unutun! Hiçbir indikatör kullanmadan, <strong>sadece CRT ve MMXM konseptleri ile piyasayı okuyun</strong>.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="title">✓ Gecikmeyen, Anlık Analizler</div>
+                    <p>İndikatörler geçmiş verilerle çalışır ve <strong>her zaman gecikir</strong>. CRT/MMXM ile piyasanın şu anki durumunu anlık okuyun!</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="title">✓ Evrensel Strateji - Her Yerde Çalışır</div>
+                    <p>Öğrendiğiniz stratejiler <strong>her zaman diliminde ve her piyasada</strong> çalışır. İster 1 dakika, ister 1 günlük grafik!</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="title">✓ Psikoloji ve Disiplin Eğitimi</div>
+                    <p>Sadece teknik bilgi değil, aynı zamanda <strong>işlem psikolojisi ve disiplinli işlem yapma becerisi</strong> kazanın.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="title">✓ Risk Yönetimi Odaklı Yaklaşım</div>
+                    <p>Kazanmak değil, <strong>kaybetmemek</strong> daha önemlidir. Sermayenizi korumayı öğrenin!</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="title">✓ Gerçek Piyasa Örnekleri</div>
+                    <p>Teorik bilgi değil, <strong>gerçek piyasa grafikleri üzerinde anlık analizler</strong> yapacaksınız.</p>
+                </div>
+            </div>
+
+            <div class="why-choose" style="margin-top: 60px;">
+                <h3>🏆 Bu Eğitimle Neler Kazanacaksınız?</h3>
+                <ul>
+                    <li>Profesyonel trader seviyesinde piyasa okuma yeteneği</li>
+                    <li>Kurumsal yatırımcılarla aynı stratejileri kullanma becerisi</li>
+                    <li>Her piyasa koşulunda karlı işlem yapabilme</li>
+                    <li>Duygularınızı kontrol edip planlı işlem yapma disiplini</li>
+                    <li>Sürdürülebilir ve tutarlı gelir elde etme stratejisi</li>
+                    <li>Finansal özgürlüğe giden yolda sağlam bir temel</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div id="icerik" class="section">
+            <h2 class="section-title">📖 Eğitim İçeriği</h2>
+            
+            <div class="highlight-box">
+                📚 12 haftalık kapsamlı program ile sıfırdan profesyonel seviyeye! Her hafta teorik bilgi + canlı piyasa uygulaması
+            </div>
+
+            <div class="modules-grid">
+                <div class="module-card">
+                    <h3>Hafta 1-2: Temel Kavramlar ve CRT/MMXM</h3>
+                    <ul>
+                        <li><strong>CRT (Candle Range Theory) nedir?</strong> - Mumların aralıklarını analiz etme sanatı</li>
+                        <li><strong>MMXM (Market Maker Execution Model)</strong> - Piyasa yapıcılarının stratejileri</li>
+                        <li><strong>Order Block nedir?</strong> - Kurumsal emirlerin bulunduğu bölgeler</li>
+                        <li><strong>FVG ve IFVG analizi</strong> - Fiyat boşluklarından kar etme</li>
+                        <li><strong>BPR (Balanced Price Range)</strong> - Dengeli fiyat aralıkları</li>
+                        <li>Likidite havuzları ve akıllı para takibi</li>
+                    </ul>
+                </div>
+
+                <div class="module-card">
+                    <h3>Hafta 3-4: Trend Analizi ve Yapısal Seviyeler</h3>
+                    <ul>
+                        <li>Trend tanımlama: yükselen, düşen ve yatay trend</li>
+                        <li>Higher High (HH), Higher Low (HL), Lower Low (LL), Lower High (LH)</li>
+                        <li>Swing noktaları ve önemi</li>
+                        <li>Yapısal kırılmalar (BOS)</li>
+                        <li>Karakter değişimi (CHoCH)</li>
+                    </ul>
+                </div>
+
+                <div class="module-card">
+                    <h3>Hafta 5-6: İleri Seviye Order Block ve FVG</h3>
+                    <ul>
+                        <li>Bullish ve Bearish Order Block'ları tanımlama</li>
+                        <li>Order Block'larda optimal giriş noktaları</li>
+                        <li>FVG ve IFVG'lerin işlem stratejilerinde kullanımı</li>
+                        <li>BPR bölgelerinde işlem fırsatları</li>
+                        <li>Liquidity sweep tespit etme</li>
+                    </ul>
+                </div>
+
+                <div class="module-card">
+                    <h3>Hafta 7-8: Giriş ve Çıkış Stratejileri</h3>
+                    <ul>
+                        <li>CRT/MMXM ile optimal giriş noktaları</li>
+                        <li>Risk/ödül oranı hesaplama</li>
+                        <li>Stop-loss belirleme teknikleri</li>
+                        <li>Take-profit hedefleri ve kademeli çıkış</li>
+                        <li>Trailing stop kullanımı</li>
+                    </ul>
+                </div>
+
+                <div class="module-card">
+                    <h3>Hafta 9-10: Risk Yönetimi ve Psikoloji</h3>
+                    <ul>
+                        <li>Pozisyon boyutlandırma ve sermaye yönetimi</li>
+                        <li>Duygusal kararlardan kaçınma</li>
+                        <li>İşlem planı oluşturma</li>
+                        <li>Winning ve losing streak yönetimi</li>
+                        <li>İşlem günlüğü tutma</li>
+                    </ul>
+                </div>
+
+                <div class="module-card">
+                    <h3>Hafta 11-12: İleri Seviye ve Canlı Analiz</h3>
+                    <ul>
+                        <li>Scalping, day trading ve swing trading</li>
+                        <li>Farklı piyasa koşullarında adaptasyon</li>
+                        <li>Haber akışı ve volatilite yönetimi</li>
+                        <li>Gerçek zamanlı piyasa analizleri</li>
+                        <li>Başarılı trader zihniyeti</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bonus -->
+        <div id="bonus" class="section" style="background: #f8f9fa;">
+            <div class="bonus-section">
+                <h2>🎁 ÖZEL BONUSLAR</h2>
+                <div style="font-size: 1.6em; margin-bottom: 40px;">Eğitim Sonrası Tam 1 Yıl Boyunca!</div>
+                
+                <h3 style="font-size: 2.2em; margin: 50px 0 35px;">🤖 Algoritmik İşlem Botları</h3>
+                <p style="font-size: 1.35em; margin-bottom: 45px; line-height: 1.9;">
+                    Profesyonel botlar ile öğrendiklerinizi otomatikleştirin! 7/24 piyasalarda aktif kalın!
+                </p>
+                
+                <div class="bot-grid">
+                    <div class="bot-card">
+                        <div class="bot-icon">🎯</div>
+                        <div class="bot-title">TP Master Bot</div>
+                        <p>Güçlü trendleri tespit eder ve trend yönünde pozisyon açar. Take-profit seviyelerini otomatik optimize eder.</p>
+                    </div>
+                    <div class="bot-card">
+                        <div class="bot-icon">📉</div>
+                        <div class="bot-title">Düşen Trend Kırılımı Botu</div>
+                        <p>Düşen trendlerin kırılım noktalarını yakalar ve yeni yükselen trendlerde pozisyon alır.</p>
+                    </div>
+                    <div class="bot-card">
+                        <div class="bot-icon">☕</div>
+                        <div class="bot-title">Fincan Kulp Botu</div>
+                        <p>Klasik fincan kulp formasyonlarını tespit eder ve kırılım anında optimal giriş yapar.</p>
+                    </div>
+                    <div class="bot-card">
+                        <div class="bot-icon">📊</div>
+                        <div class="bot-title">Grid Bot</div>
+                        <p>Yatay piyasalarda belirli fiyat aralıklarında otomatik alım-satım yaparak düzenli kar elde eder.</p>
+                    </div>
+                    <div class="bot-card">
+                        <div class="bot-icon">🛡️</div>
+                        <div class="bot-title">Risk Yönetimi Modülü</div>
+                        <p>Otomatik stop-loss, take-profit ve pozisyon boyutlandırma. Sermayenizi korur.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fund-bonus">
+                <h2 style="font-size: 2.8em; margin-bottom: 25px;">💰 İŞLEM FONU HEDİYESİ</h2>
+                <div class="amount">$5,000</div>
+                <h3>Forex ve Kripto İşlemleri İçin Gerçek Para!</h3>
+                <p>
+                    Eğitim programını başarıyla tamamladıktan sonra, <strong>5.000 USD</strong> değerinde işlem fonu hediye ediyoruz! Bu fonla öğrendiklerinizi gerçek piyasada uygulayın ve gerçek kazançlar elde edin. <strong>Demo hesap değil, gerçek para!</strong>
+                </p>
+            </div>
+
+            <div class="why-choose" style="margin-top: 60px;">
+                <h3>🌟 Bu Kadar Bonus Neden Veriyoruz?</h3>
+                <ul>
+                    <li>Başarınız bizim başarımızdır</li>
+                    <li>Öğrendiklerinizi gerçek piyasada uygulamanızı istiyoruz</li>
+                    <li>Botlar sayesinde pasif gelir elde edebilirsiniz</li>
+                    <li>5.000 USD ile sıfır riskle gerçek işlem deneyimi</li>
+                    <li>Eğitimimizin kalitesine güveniyoruz</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Price -->
+        <div id="ucret" class="section">
+            <div class="price-section">
+                <h2 style="font-size: 3.2em; margin-bottom: 30px; font-weight: 800;">💳 EĞİTİM ÜCRETİ</h2>
+                
+                <div style="font-size: 1.5em; margin-bottom: 20px;">
+                    <strong>Tek Seferlik Yatırım:</strong>
+                </div>
+                <div class="price">20.000 ₺</div>
+                
+                <div style="font-size: 1.4em; margin: 30px 0; line-height: 1.8;">
+                    💎 <strong>12 haftalık profesyonel eğitim</strong><br>
+                    💎 <strong>5.000 USD gerçek işlem fonu</strong><br>
+                    💎 <strong>1 yıl bot erişimi</strong><br>
+                    💎 <strong>3 ay ücretsiz danışmanlık</strong>
+                </div>
+
+                <h3 style="font-size: 2.2em; margin: 50px 0 35px; font-weight: 700;">Ücrete Dahil Olan Her Şey:</h3>
+                <ul class="included-list">
+                    <li>3 aylık birebir CRT/MMXM eğitimi (48 saat)</li>
+                    <li>Tüm eğitim materyalleri ve ders kayıtları</li>
+                    <li>1 yıl boyunca 5 farklı algoritmik bot erişimi</li>
+                    <li class="highlight">5.000 USD Forex/Kripto işlem fonu 💰</li>
+                    <li>Özel WhatsApp/Telegram destek grubu</li>
+                    <li>3 ay ücretsiz danışmanlık desteği</li>
+                    <li>Canlı piyasa analizi seansları</li>
+                    <li>İşlem planı şablonları ve araçlar</li>
+                </ul>
+
+                <a href="https://wa.me/905432478002?text=Merhaba,%20CRT%20ve%20MMXM%20e%C4%9Fitimi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." class="cta-button" target="_blank">
+                    💬 WHATSAPP'TAN HEMEN BAŞVUR
+                </a>
+
+                <div style="margin-top: 40px; font-size: 1.3em; line-height: 1.9;">
+                    <strong>⚡ Sınırlı Kontenjan:</strong> Ayda maksimum 4 öğrenci<br>
+                    <strong>📅 Erken Kayıt:</strong> İlk görüşmede %10 indirim!
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact -->
+        <div id="iletisim" class="contact-section">
+            <h2 style="font-size: 3.2em; margin-bottom: 35px; font-weight: 800;">📞 Başvuru ve İletişim</h2>
+            <p style="font-size: 1.4em; margin-bottom: 50px; line-height: 1.9;">
+                Eğitim programı hakkında <strong>detaylı bilgi almak</strong> ve <strong>başvurunuzu yapmak</strong> için:<br>
+                Hemen iletişime geçin ve profesyonel trader olma yolculuğunuza başlayın!
+            </p>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="icon">📧</div>
+                    <div style="margin-top: 20px; font-size: 1.1em; color: #ecf0f1; margin-bottom: 15px;">E-posta</div>
+                    <a href="mailto:timurinci10@gmail.com">timurinci10@gmail.com</a>
+                </div>
+                <div class="contact-card">
+                    <div class="icon">📱</div>
+                    <div style="margin-top: 20px; font-size: 1.1em; color: #ecf0f1; margin-bottom: 15px;">Telefon</div>
+                    <a href="tel:+905432478002">0543 247 80 02</a>
+                </div>
+                <div class="contact-card">
+                    <div class="icon">💬</div>
+                    <div style="margin-top: 20px; font-size: 1.1em; color: #ecf0f1; margin-bottom: 15px;">WhatsApp</div>
+                    <a href="https://wa.me/905432478002?text=Merhaba,%20CRT%20ve%20MMXM%20e%C4%9Fitimi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank">0543 247 80 02</a>
+                </div>
+            </div>
+
+            <div style="margin-top: 70px;">
+                <a href="https://wa.me/905432478002?text=Merhaba,%20CRT%20ve%20MMXM%20e%C4%9Fitimi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." class="cta-button" target="_blank">
+                    🚀 WHATSAPP'TAN HEMEN BAŞVUR
+                </a>
+            </div>
+
+            <div style="margin-top: 70px; font-size: 3.5em;">
+                💼 📊 📈 💹 🚀
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="warning">
+                <strong style="color: #e74c3c; font-size: 1.2em;">⚠️ ÖNEMLİ BİLGİLENDİRME</strong><br><br>
+                Bu eğitim programı yatırım tavsiyesi niteliği taşımaz. Finansal piyasalarda işlem yapmak risk içerir ve sermaye kaybına yol açabilir. Eğitimde öğrenilen stratejiler ve teknikler, katılımcıların kendi sorumluluğunda uygulanır. Geçmiş performans, gelecekteki sonuçların garantisi değildir. Algoritmik botlar ve hediye edilen fon karlılık garantisi vermez.
+            </div>
+            
+            <h3 style="color: #27ae60; font-size: 2.3em; margin: 50px 0 30px; font-weight: 800;">
+                🎯 Profesyonel Trader Olma Yolculuğunuz Burada Başlıyor! 🎯
+            </h3>
+            <p style="font-size: 1.5em; color: #3498db; margin-top: 25px; font-weight: 600;">
+                Başarıya Giden Yolda İlk Adımı Atın!
+            </p>
+            <p style="margin-top: 50px; font-size: 1.05em;">
+                © 2025 CRT/MMXM Trading Eğitimi. Tüm hakları saklıdır.
+            </p>
+        </div>
+    </div>
+
+    <!-- Scroll Button -->
+    <div class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</div>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Scroll button
+        window.addEventListener('scroll', function() {
+            const scrollTop = document.querySelector('.scroll-top');
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('show');
+            } else {
+                scrollTop.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
